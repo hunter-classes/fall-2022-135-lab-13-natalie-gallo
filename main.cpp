@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <cctype>
 #include "funcs.h"
 using namespace std;
 
@@ -39,6 +41,12 @@ int main()
     cout << "Sum is " << sum2 << endl;  // Sum is 34
 
     delete[] arr;         // deallocate it
+
+    //TASK D
+    cout << "\nTASK D\n---------------------------\n\n";
+    cout << isAlphanumeric("ABCD") << endl;        // true (1)
+    cout << isAlphanumeric("Abcd1234xyz") << endl; // true (1)
+    cout << isAlphanumeric("KLMN 8-7-6") << endl;  // false (0)
 
     return 0;
 }

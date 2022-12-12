@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 #include "funcs.h"
 using namespace std;
 
@@ -28,4 +29,18 @@ int sumArray(int *arr, int size){
     }
     //start adding from last element and then decrement the size by 1
     return *(arr + (size - 1)) + sumArray(arr, size - 1); // 1. size = 10; 10 - 1 = [9] + (SIZE = 10 - 1 = 9)    2. size = 9; 9-1 = [8] + (SIZE = 8-1 = 7)
+}
+
+//TASK D
+bool isAlphanumeric(std::string s){
+    if (s == ""){
+        return true;
+    }
+
+    if (!isalnum(s[0])){
+        return false;
+    } //else
+    //disregard last checked character and check if next character isalnum
+    s = s.substr(1);
+    return isAlphanumeric(s);
 }
