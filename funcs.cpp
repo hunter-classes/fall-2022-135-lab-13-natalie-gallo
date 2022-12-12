@@ -44,3 +44,23 @@ bool isAlphanumeric(std::string s){
     s = s.substr(1);
     return isAlphanumeric(s);
 }
+
+//TASK E
+bool nestedParens(std::string s){
+    if (s == ""){
+        return true;
+    }
+
+    if (s.length() % 2 != 0){
+        return false;
+    }
+    
+    int length = s.length();
+
+    if(s[0] != '(' || s[length-1] != ')'){
+        return false;
+    }
+
+    s = s.substr(1, length - 2);
+    return nestedParens(s);
+}
